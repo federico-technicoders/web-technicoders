@@ -110,7 +110,7 @@ export const Soluciones = () => {
                                 <h2 className="text-[32px] font-black uppercase ">
                                     Creamos la web que impulsa tu negocio
                                 </h2>
-                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
                                 <button>
                                     Saber más
                                 </button>
@@ -135,7 +135,7 @@ export const Soluciones = () => {
                                 <h2 className="text-[32px] font-black uppercase ">
                                     Creamos la web que impulsa tu negocio
                                 </h2>
-                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
                                 <button>
                                     Saber más
                                 </button>
@@ -160,7 +160,7 @@ export const Soluciones = () => {
                                 <h2 className="text-[32px] font-black uppercase ">
                                     Creamos la web que impulsa tu negocio
                                 </h2>
-                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
                                 <button>
                                     Saber más
                                 </button>
