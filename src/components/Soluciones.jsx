@@ -4,6 +4,8 @@ import { useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger, ScrollToPlugin } from "gsap/all"
 import { useGSAP } from "@gsap/react"
+import { TitleSection } from "./ui/TitleSection/TitleSection"
+import { SpanGradient } from "./ui/SpanGradient/SpanGradient"
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -82,41 +84,97 @@ export const Soluciones = () => {
 
     return (
         <section ref={sectionRef} className="relative flex justify-start items-start w-full  text-white bg-[#0E1629] -z-0">
-            <div className="flex justify-center items-start w-full text-white px-[5%] ">
+            <span className="absolute text-[#FFFFFF30] uppercase top-0 right-0 text-[104px] font-bold">Transformación</span>
+            <div className="flex justify-center items-start w-full text-white px-[5%] py-[20%]">
                 {/* Mitad izquierda fija */}
-                <article className="w-1/2 bg-blue fixed top-0 left-0 h-screen flex justify-center items-center">
-                    <h2 className="text-white text-4xl font-bold">Nuestras soluciones</h2>
+                <article className="flex flex-col justify-start items-start gap-[20px] w-1/2 bg-blue h-screen">
+                    {/* <h2 className="text-white text-[80px] font-bold">Nuestras soluciones</h2> */}
+                    <TitleSection>
+                        Nuestras <SpanGradient>soluciones</SpanGradient>
+                    </TitleSection>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
                 </article>
 
                 {/* Mitad derecha con múltiples secciones */}
-                <aside className="bg-blue text-[#ff98a2] font-slussen w-1/2 min-h-screen ml-[50%]">
+                <aside className="bg-blue text-[#ff98a2] font-slussen w-1/2 min-h-screen">
                     <div
                         ref={cardsRef}
-                        className="h-screen w-full m-auto relative flex justify-start items-center"
+                        className="h-screen w-full m-auto relative flex justify-start items-start"
                     >
                         <div
                             ref={card1Ref}
-                            className="absolute w-[60%] h-[50vh] bg-[#f1f1f1] flex justify-center items-center rounded-[7px] mb-[50px] left-20 top-[30%]"
+                            className="absolute w-[80%] h-[50vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[2%] text-black"
                         >
-                            <h2 className="text-[80px] font-black uppercase text-[#ff98a2]">
-                                01
-                            </h2>
+                            <div className="flex flex-col justify-start items-start w-full h-full p-[5%]">
+                                <span >Diseño y desarrollo web</span>
+                                <h2 className="text-[32px] font-black uppercase ">
+                                    Creamos la web que impulsa tu negocio
+                                </h2>
+                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <button>
+                                    Saber más
+                                </button>
+                            </div>
+                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black  p-[5%] gap-3">
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+
+                            </div>
                         </div>
                         <div
                             ref={card2Ref}
-                            className="absolute w-[60%] h-[50vh] bg-[#f1f1f1] flex justify-center items-center rounded-[7px] mb-[50px] left-20 top-[35%]"
+                            className="absolute w-[80%] h-[50vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[5%]"
                         >
-                            <h2 className="text-[80px] font-black uppercase text-[#ff98a2]">
-                                02
-                            </h2>
+                             <div className="flex flex-col justify-start items-start w-full h-full p-[5%]">
+                                <span >Diseño y desarrollo web</span>
+                                <h2 className="text-[32px] font-black uppercase ">
+                                    Creamos la web que impulsa tu negocio
+                                </h2>
+                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <button>
+                                    Saber más
+                                </button>
+                            </div>
+                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black p-[5%] gap-3">
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+
+                            </div>
                         </div>
                         <div
                             ref={card3Ref}
-                            className="absolute w-[60%] h-[50vh] bg-[#f1f1f1] flex justify-center items-center rounded-[7px] mb-[50px] left-20 top-[40%]"
+                            className="absolute w-[80%] h-[50vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[8%]"
                         >
-                            <h2 className="text-[80px] font-black uppercase text-[#ff98a2]">
-                                03
-                            </h2>
+                             <div className="flex flex-col justify-start items-start w-full h-full p-[5%]">
+                                <span >Diseño y desarrollo web</span>
+                                <h2 className="text-[32px] font-black uppercase ">
+                                    Creamos la web que impulsa tu negocio
+                                </h2>
+                                <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+                                <button>
+                                    Saber más
+                                </button>
+                            </div>
+                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black p-[5%] gap-3">
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+                                <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
+
+                            </div>
                         </div>
                     </div>
                 </aside>

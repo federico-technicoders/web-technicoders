@@ -5,19 +5,24 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import { Footer, Soluciones, TecnologiasSection, TextReveal } from '@/components'
+import Image from 'next/image'
 
 export default function Home(){
-    const [ activeNumber, setActiveNumber ] = useState("01")
+    const [ activeNumber, setActiveNumber ] = useState(1)
     const sectionHero = useRef(null)
     const section2 = useRef(null)
     const contentSection2 = useRef(null)
+    const contentInfoSection2 = useRef(null)
     const section2b = useRef(null)
     const section3 = useRef(null)
     const section3a = useRef(null)
     const section3b = useRef(null)
     const section3c = useRef(null)
+    const section3d = useRef(null)
+
     const contentSection3 = useRef(null)
     const section4 = useRef(null)
+    
 
     gsap.registerPlugin(ScrollTrigger)
 
@@ -30,9 +35,12 @@ export default function Home(){
         const section3aCurrent = section3a.current
         const section3bCurrent = section3b.current
         const section3cCurrent = section3c.current
+        // const section3dCurrent
 
         const contentSection3Current = contentSection3.current
         const section4Current = section4.current
+
+        const contentInfoSection2Current = contentInfoSection2.current
 
         // Mantiene el hero en la posición inicial
         ScrollTrigger.create({
@@ -42,7 +50,7 @@ export default function Home(){
             end: "top top",
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
         })
 
         // Mantiene la sección 2 fija hasta la sección 4
@@ -53,7 +61,7 @@ export default function Home(){
             end: "top top",
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
         })
 
         // Anima el escalado de contentSection2 para agrandarse y luego achicarse
@@ -63,7 +71,7 @@ export default function Home(){
                 start: "top bottom",
                 end: "bottom top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
         })
         .to(contentSection2Current, {
@@ -81,10 +89,9 @@ export default function Home(){
             width: '100vw',
             height: '100vh',
         })
-        // .to(contentSection2Current,{
-        //     width: '100vw',
-        //     height: '100vh',
-        // })
+        .to(contentInfoSection2Current,{
+            opacity: 1,
+        },0)
         .to(contentSection2Current, {
             width: '150px',
             height: '150px',
@@ -102,7 +109,7 @@ export default function Home(){
                 trigger: section2bCurrent,
                 start: "center top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
             opacity: 0,
         })
@@ -113,67 +120,9 @@ export default function Home(){
                 trigger: section2bCurrent,
                 start: "center top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
             opacity: 1,
-        })
-
-        // Mantiene la sección 3 fija hasta la sección 4
-        // ScrollTrigger.create({
-        //     trigger: section3Current,
-        //     start: "top top",
-        //     endTrigger: section4Current,
-        //     end: "top top",
-        //     pin: true,
-        //     pinSpacing: false,
-        //     markers: true,
-        // })
-
-        ScrollTrigger.create({
-            trigger: section2bCurrent,
-            start: "top top",
-            endTrigger: section3Current,
-            end: "top top",
-            pin: true,
-            pinSpacing: false,
-            markers: true,
-            onEnter: () => setActiveNumber("01"),
-            onEnterBack: () => setActiveNumber("01"),
-        })
-
-        ScrollTrigger.create({
-            trigger: section3Current,
-            start: "top top",
-            endTrigger: section3aCurrent,
-            end: "top top",
-            pin: true,
-            pinSpacing: false,
-            markers: true,
-            onEnter: () => setActiveNumber("02"),
-            onEnterBack: () => setActiveNumber("02"),
-        })
-
-        ScrollTrigger.create({
-            trigger: section3aCurrent,
-            start: "top top",
-            endTrigger: section3bCurrent,
-            end: "top top",
-            pin: true,
-            pinSpacing: false,
-            markers: true,
-            onEnter: () => setActiveNumber("03"),
-            onEnterBack: () => setActiveNumber("03"),
-        })
-        ScrollTrigger.create({
-            trigger: section3bCurrent,
-            start: "top top",
-            endTrigger: section3cCurrent,
-            end: "top top",
-            pin: true,
-            pinSpacing: false,
-            markers: true,
-            onEnter: () => setActiveNumber("04"),
-            onEnterBack: () => setActiveNumber("04"),
         })
         gsap.timeline({
             scrollTrigger: {
@@ -181,7 +130,7 @@ export default function Home(){
                 start: "top bottom",
                 end: "top top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
         })
 
@@ -198,7 +147,7 @@ export default function Home(){
                 start: "top top+=3%",
                 end: "top top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
         })
 
@@ -208,15 +157,89 @@ export default function Home(){
 
         .to(contentSection3Current, {
             opacity: 0,
-        })       
-        
-       
+        })         
     })
+
+    useGSAP(()=>{
+        const section3current = section3.current
+        const section3acurrent = section3a.current
+        const section3bcurrent = section3b.current
+        const section3ccurrent = section3c.current
+        const section3dcurrent = section3d.current
+
+        const sections = [section3current, section3acurrent, section3bcurrent, section3ccurrent, section3dcurrent]
+
+        sections.forEach((section, index) => {
+            if (!section || index === sections.length - 1) return;
+
+            const nextSection = sections[index + 1];
+            console.log(index)
+            console.log(nextSection)
+
+            // Pin efecto
+            ScrollTrigger.create({
+                    trigger: section,
+                    start: 'top top',
+                    endTrigger: nextSection,
+                    end: 'top top',
+                    pin: true,
+                    pinSpacing: false,
+                    scrub: true,
+                    onEnter: () => setActiveNumber(index + 1),
+                    onEnterBack: () => setActiveNumber(index + 1),
+                    markers: true,
+                },
+                
+            )
+
+            // Efecto persiana
+            if (nextSection) {
+                gsap.fromTo(
+                    nextSection,
+                    { clipPath: 'inset(200% 0 0 0)' },
+                    {
+                        clipPath: 'inset(0% 0 0 0)',
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: nextSection,
+                            start: 'top bottom',
+                            end: 'top top',
+                            scrub: true,
+                        },
+                    }
+                )
+
+                // Efecto de alejamiento de la imagen
+                const nextImage = nextSection.querySelector('img')
+
+                if (nextImage) {
+                    gsap.fromTo(
+                        nextImage,
+                        { scale: 1.2 },
+                        {
+                            scale: 1,
+                            ease: 'none',
+                            scrollTrigger: {
+                                trigger: nextSection,
+                                start: 'top bottom',
+                                end: 'top top',
+                                scrub: true,
+                            },
+                        }
+                    );
+                }
+            }
+        })
+
+        return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+        }
+    })
+    
     
     return (
         <div className="relative items-center justify-items-center min-h-screen gap-16 font-[family-name:var(--font-geist-sans)] bg-green-300 -z-50">
             <main className="flex flex-col justify-start items-start sm:items-start w-full ">
-
                 <section 
                     ref={sectionHero}
                     className="flex flex-col justify-center items-center w-full h-screen bg-black"
@@ -275,9 +298,7 @@ export default function Home(){
                         </video>
                     </div>
                 </section>
-          
-
-
+                
                 {/* esta es la sección del problema */}
                 <section 
                     ref={section2}
@@ -285,18 +306,21 @@ export default function Home(){
                 >
                     <div 
                         ref={contentSection2}
-                        className='absolute flex flex-col justify-center items-center w-[400px] h-[400px] bg-slate-200 rounded-2xl'
+                        className='absolute flex flex-col justify-center items-center w-[400px] h-[400px] bg-black rounded-2xl overflow-hidden'
                         
                     >
                         {/* <div className='text-black'>
                             <h2 className="text-5xl font-bold">Sección 2</h2>
                             <p className="text-xl">Este es el título de la sección</p>
                         </div> */}
-                        <div 
+                        {/* <div 
                             // ref={choeteSectionRef} 
                             className="relative px-[5%] py-[10%] w-full h-full  bg-[#0E1629]"
-                        >
-                            <div className="flex flex-col justify-start items-start gap-8">
+                        > */}
+                            <div
+                                ref={contentInfoSection2}
+                                className="flex flex-col justify-start items-start gap-8 opacity-0"
+                            >
                                 <h2 className="text-[30px] md:text-[60px] lg:text-[90px] text-white leading-none font-semibold mt-16">
                                     Programa {' '}
                                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
@@ -337,7 +361,7 @@ export default function Home(){
                                 loading="lazy"
                             />
                         </div>
-                    </div>
+                    {/* </div> */}
 
                     {/* esta es la sección del problema */}
                     <div 
@@ -346,72 +370,114 @@ export default function Home(){
                         
                     >
                         <div className='text-white'>
-                            <h2 className="text-8xl font-bold">{activeNumber}</h2>
+                            <h2 className="text-8xl font-bold">{`0${activeNumber}`}</h2>
                           
                         </div>
                     </div>
-                </section>
-
-                
+                </section>                
 
                 <section 
                     ref={section2b}
                     className="flex flex-col justify-center items-center w-full h-screen bg-transparent"
                 >
-                </section>
+                </section>    
 
-                <section 
-                    ref={section3}
-                    className="flex flex-col justify-center items-center w-full h-screen bg-transparent -z-10"
+                <section
+                    className='w-full'
                 >
-                   <div 
-                        className='flex justify-center items-center w-full h-full bg-black'
-                    >
-                        <div className='w-1/2 h-full'></div>
-                        <div className='flex justify-center items-center w-1/2 h-full bg-slate-400 text-black'>
-                            1ro columna
+                    <div className="fixed hidden md:flex justify-center items-center  w-full md:w-1/2 h-full z-10">
+                        <h2 className="text-balance text-5xl text-black">Estrategia, acción y resultados</h2>
+                    </div>
+                    <div ref={section3} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                        <div className="flex justify-center items-center w-full h-full">
+                            <div className='w-1/2 h-full'>
+                                {/* <h2 className="text-5xl text-black">Primera sección</h2> */}
+
+                            </div>
+                            <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
+                            <Image
+                                src="/assets/images/image1.webp"
+                                fill
+                                alt="Imagen sección 1"
+                                style={{ objectFit: 'cover' }}
+                                loading="lazy"
+                            />
+                            </div>
                         </div>
-                   </div>
-                </section>	
-                <section 
-                    ref={section3a}
-                    className="flex flex-col justify-center items-center w-full h-screen bg-transparent -z-10"
-                >
-                   <div 
-                        className='flex justify-center items-center w-full h-full bg-black'
-                    >
-                        <div className='w-1/2 h-full'></div>
-                        <div className='flex justify-center items-center w-1/2 h-full bg-slate-50 text-black'>
-                            2da columna
+                    </div>
+
+                    <div ref={section3a} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                        <div className="flex justify-center items-center w-full h-full">
+                            <div className='w-1/2 h-full'>
+                            {/* <h2 className="text-5xl">Segunda sección</h2> */}
+
+                            </div>
+                            <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
+                            <Image
+                                src="/assets/images/image2.webp"
+                                fill
+                                alt="Imagen sección 2"
+                                style={{ objectFit: 'cover' }}
+                                loading="lazy"
+                            />
+                            </div>
                         </div>
-                   </div>
-                </section>	
-                <section 
-                    ref={section3b}
-                    className="flex flex-col justify-center items-center w-full h-screen bg-transparent -z-10"
-                >
-                   <div 
-                        className='flex justify-center items-center w-full h-full bg-black'
-                    >
-                        <div className='w-1/2 h-full'></div>
-                        <div className='flex justify-center items-center w-1/2 h-full bg-slate-200 text-black'>
-                            3ra columna
+                    </div>
+
+                    <div ref={section3b} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                        <div className="flex justify-center items-center w-full h-full">
+                            <div className='w-1/2 h-full'>
+                            <h2 className="text-5xl">Tercera sección</h2>
+
+                            </div>
+                            <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
+                            <Image
+                                src="/assets/images/image3.webp"
+                                fill
+                                alt="Imagen sección 3"
+                                style={{ objectFit: 'cover' }}
+                                loading="lazy"
+                            />
+                            </div>
                         </div>
-                   </div>
-                </section>	
-                <section 
-                    ref={section3c}
-                    className="flex flex-col justify-center items-center w-full h-screen bg-transparent -z-10"
-                >
-                   <div 
-                        className='flex justify-center items-center w-full h-full bg-black'
-                    >
-                        <div className='w-1/2 h-full'></div>
-                        <div className='flex justify-center items-center w-1/2 h-full bg-slate-600 text-black'>
-                            4ta columna
+                    </div>
+
+                    <div ref={section3c} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                        <div className="flex justify-center items-center w-full h-full">
+                            <div className='w-1/2 h-full'>
+                                {/* <h2 className="text-5xl">Cuarta sección</h2> */}
+
+                            </div>
+                            <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
+                            <Image
+                                src="/assets/images/image4.webp"
+                                fill
+                                alt="Imagen sección 4"
+                                style={{ objectFit: 'cover' }}
+                                loading="lazy"
+                            />
+                            </div>
                         </div>
-                   </div>
-                </section>	
+                    </div>
+
+                    <div ref={section3d} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                        <div className="flex justify-center items-center w-full h-full">
+                            <div className='w-1/2 h-full'>
+                            {/* <h2 className="text-5xl">Quinta sección</h2> */}
+
+                            </div>
+                            <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
+                            <Image
+                                src="/assets/images/image5.webp"
+                                fill
+                                alt="Imagen sección 5"
+                                style={{ objectFit: 'cover' }}
+                                loading="lazy"
+                            />
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 <section 
                     // mirar la diferencia entre hidden y none, que hace que no funcinoes
@@ -419,9 +485,20 @@ export default function Home(){
                     >
                     <div 
                         ref={section4} 
-                        className='hidden flex-col justify-center items-center w-full h-full bg-slate-400'
+                        className='hidden flex-col justify-center items-center w-full h-full'
                     >
-                        <h2 className="text-5xl font-bold">Video Presentación</h2>
+                        <video 
+                            autoPlay={true} 
+                            playsInline={true} 
+                            muted={true} 
+                            loop={true} 
+                            preload="auto" 
+                            poster="/assets/images/image2.webp" 
+                            className="w-full min-w-full h-full object-cover z-10"
+                        >
+                           
+                            <source src="/assets/videos/intro-factoria-video.mp4" type="video/mp4" />
+                        </video>
                       
                     </div>
                 
@@ -433,10 +510,18 @@ export default function Home(){
                     <div 
                         className='flex justify-center items-center w-full h-full bg-slate-200'
                     >
-                        <h2 className="text-5xl text-black font-bold">
-
-                            Sección video portfolio
-                        </h2>
+                       <video 
+                            autoPlay={true} 
+                            playsInline={true} 
+                            muted={true} 
+                            loop={true} 
+                            preload="auto" 
+                            poster="/assets/images/image2.webp" 
+                            className="w-full min-w-full h-full object-cover z-10"
+                        >
+                           
+                            <source src="/assets/videos/intro-factoria-video.mp4" type="video/mp4" />
+                        </video>
                     </div>
                 </section>
                 <TextReveal />
