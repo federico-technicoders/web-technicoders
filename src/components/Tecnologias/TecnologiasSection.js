@@ -18,7 +18,7 @@ export const TecnologiasSection = () => {
     return (         
         
         <section 
-            className="relative flex justify-center items-center w-full h-screen z-0 bg-black"
+            className="relative flex justify-center items-center w-full h-screen bg-[#0E1629] z-10"
         >
             <div className="flex flex-col justify-center items-center w-1/2 h-full ">
                 <Marquee ELEMENTS={elements} />

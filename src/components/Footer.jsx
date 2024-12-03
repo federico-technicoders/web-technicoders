@@ -34,9 +34,9 @@ export const Footer = () => {
             <div
                 className='flex flex-col justify-center items-start w-full h-full bg-black rounded-bl-xl rounded-br-xl pl-8'
             >
-                <h2 className="text-sm text-white font-bold">Info footer</h2>
+                {/* <h2 className="text-sm text-white font-bold">Info footer</h2>
                 <h3 className="text-sm text-white font-bold">Info footer</h3>
-                <h4 className="text-sm text-white font-bold">Info footer</h4>
+                <h4 className="text-sm text-white font-bold">Info footer</h4> */}
             </div>
             <div
                 ref={textFooter}

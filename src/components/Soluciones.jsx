@@ -85,7 +85,7 @@ export const Soluciones = () => {
     return (
         <section ref={sectionRef} className="relative flex justify-start items-start w-full  text-white bg-[#0E1629] -z-0">
             <span className="absolute text-[#FFFFFF30] uppercase top-0 right-0 text-[104px] font-bold">Transformación</span>
-            <div className="flex justify-center items-start w-full text-white px-[5%] py-[20%]">
+            <div className="flex justify-center items-start w-full text-white px-[5%] py-[15%]">
                 {/* Mitad izquierda fija */}
                 <article className="flex flex-col justify-start items-start gap-[20px] w-1/2 bg-blue h-screen">
                     {/* <h2 className="text-white text-[80px] font-bold">Nuestras soluciones</h2> */}
@@ -96,26 +96,26 @@ export const Soluciones = () => {
                 </article>
 
                 {/* Mitad derecha con múltiples secciones */}
-                <aside className="bg-blue text-[#ff98a2] font-slussen w-1/2 min-h-screen">
+                <aside className="bg-blue text-black font-slussen w-1/2 min-h-screen">
                     <div
                         ref={cardsRef}
                         className="h-screen w-full m-auto relative flex justify-start items-start"
                     >
                         <div
                             ref={card1Ref}
-                            className="absolute w-[80%] h-[50vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[2%] text-black"
+                            className="absolute w-[90%] h-[60vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-0 text-black p-[5%]"
                         >
-                            <div className="flex flex-col justify-start items-start w-full h-full p-[5%]">
+                            <div className="flex flex-col justify-start items-start w-full h-full">
                                 <span >Diseño y desarrollo web</span>
-                                <h2 className="text-[32px] font-black uppercase ">
+                                <h2 className="text-[40px] uppercase font-extrabold leading-nomal">
                                     Creamos la web que impulsa tu negocio
                                 </h2>
                                 <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
-                                <button>
+                                <button className="bg-[#06D5B9] rounded-full px-[24px] py-[8px] mt-6 mb-8">
                                     Saber más
                                 </button>
                             </div>
-                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black  p-[5%] gap-3">
+                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black  gap-3">
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
@@ -123,24 +123,23 @@ export const Soluciones = () => {
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
-
                             </div>
                         </div>
                         <div
                             ref={card2Ref}
-                            className="absolute w-[80%] h-[50vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[5%]"
+                            className="absolute w-[90%] h-[60vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[3%] p-[5%]"
                         >
-                             <div className="flex flex-col justify-start items-start w-full h-full p-[5%]">
+                             <div className="flex flex-col justify-start items-start w-full h-full">
                                 <span >Diseño y desarrollo web</span>
-                                <h2 className="text-[32px] font-black uppercase ">
+                                <h2 className="text-[40px] font-extrabold uppercase ">
                                     Creamos la web que impulsa tu negocio
                                 </h2>
                                 <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
-                                <button>
+                                <button className="bg-[#06D5B9] rounded-full px-[24px] py-[8px] mt-6 mb-8">
                                     Saber más
                                 </button>
                             </div>
-                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black p-[5%] gap-3">
+                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black gap-3">
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
@@ -153,19 +152,19 @@ export const Soluciones = () => {
                         </div>
                         <div
                             ref={card3Ref}
-                            className="absolute w-[80%] h-[50vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[8%]"
+                            className="absolute w-[90%] h-[60vh] bg-[#f1f1f1] flex flex-col justify-center items-center rounded-[50px] mb-[50px] left-20 top-[6%] p-[5%]"
                         >
-                             <div className="flex flex-col justify-start items-start w-full h-full p-[5%]">
+                             <div className="flex flex-col justify-start items-start w-full h-full">
                                 <span >Diseño y desarrollo web</span>
-                                <h2 className="text-[32px] font-black uppercase ">
+                                <h2 className="text-[40px] font-extrabold uppercase ">
                                     Creamos la web que impulsa tu negocio
                                 </h2>
                                 <p className="text-[16px]">Te Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text.</p>
-                                <button>
+                                <button className="bg-[#06D5B9] rounded-full px-[24px] py-[8px] mt-6 mb-8">
                                     Saber más
                                 </button>
                             </div>
-                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black p-[5%] gap-3">
+                            <div className="flex justify-beetwen items-center flex-wrap w-full h-full text-black gap-3">
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>
                                 <span className="font-bold bg-[#00000010] rounded-[50px] p-3 text-[#00000030]">Software/apps</span>

@@ -4,8 +4,13 @@ import { useRef, useState } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { Footer, Soluciones, TecnologiasSection, TextReveal } from '@/components'
+import { ContactoSection, EquipoSection, Footer, Soluciones, TecnologiasSection, TestimonioSection, TextReveal } from '@/components'
 import Image from 'next/image'
+
+if (typeof window !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger, useGSAP)
+}
+
 
 export default function Home(){
     const [ activeNumber, setActiveNumber ] = useState(1)
@@ -528,7 +533,7 @@ export default function Home(){
                 <section                  
                     className="flex flex-col justify-center items-center w-full h-screen bg-transparent"
                 >
-                    <div 
+                    {/* <div 
                         className='flex flex-col justify-center items-center w-full h-full bg-black'
                     >
                         <h2 className="text-5xl text-white font-bold mb-10">
@@ -540,7 +545,8 @@ export default function Home(){
                             <div className='w-[23%] h-[500px] bg-white rounded-xl'></div>
                             <div className='w-[23%] h-[500px] bg-white rounded-xl'></div>
                         </div>
-                    </div>
+                    </div> */}
+                    <EquipoSection />
                 </section>
                 {/* <section                  
                     className="flex flex-col justify-center items-center w-full h-screen bg-transparent"
@@ -556,10 +562,10 @@ export default function Home(){
                     </div>
                 </section> */}
                 <TecnologiasSection />
-                <section                  
-                    className="flex flex-col justify-center items-center w-full h-screen bg-transparent"
-                >
-                    <div 
+                {/* <section                  
+                    className="flex flex-col justify-center items-center w-full bg-transparent"
+                > */}
+                    {/* <div 
                         className='flex flex-col justify-center items-center w-full h-full bg-black'
                     >
                         <h2 className="text-5xl text-white font-bold">
@@ -582,9 +588,10 @@ export default function Home(){
                             </div>
 
                         </div>
-                    </div>
-                </section>
-                <section                  
+                    </div> */}
+                    <TestimonioSection />
+                {/* </section> */}
+                {/* <section                  
                     className="flex flex-col justify-center items-center w-full min-h-screen bg-transparent"
                 >
                     <div 
@@ -598,7 +605,8 @@ export default function Home(){
 
                         </div>
                     </div>
-                </section>
+                </section> */}
+                <ContactoSection />
             </main>
             <Footer />
         </div>

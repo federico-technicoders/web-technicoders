@@ -42,7 +42,7 @@ export const TextReveal = () => {
     })
     
     return (       
-        <section className="flex flex-col items-center justify-center w-full p-[5%] bg-black">
+        <section className="flex flex-col items-center justify-center w-full p-[5%] bg-[#0E1629]">
             <div className="flex flex-col items-center justify-start w-full h-full bg-white rounded-xl">
                 <div 
                     className="w-full p-10"
