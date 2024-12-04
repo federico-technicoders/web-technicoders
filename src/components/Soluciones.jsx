@@ -2,12 +2,11 @@
 
 import { useRef } from "react"
 import gsap from "gsap"
-import { ScrollTrigger, ScrollToPlugin } from "gsap/all"
+import { ScrollTrigger } from "gsap/all"
 import { useGSAP } from "@gsap/react"
 import { TitleSection } from "./ui/TitleSection/TitleSection"
 import { SpanGradient } from "./ui/SpanGradient/SpanGradient"
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 export const Soluciones = () => {
     const sectionRef = useRef(null);
@@ -16,6 +15,8 @@ export const Soluciones = () => {
     const card2Ref = useRef(null);
     const card3Ref = useRef(null);
 
+    gsap.registerPlugin(ScrollTrigger)
+    
     useGSAP(() => {
         const timeline = gsap.timeline({
             scrollTrigger: {

@@ -1,35 +1,41 @@
 'use client'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import { ContactoSection, EquipoSection, Footer, Soluciones, TecnologiasSection, TestimonioSection, TextReveal } from '@/components'
+import Lenis from '@studio-freight/lenis'
+import { ButtonCto, ContactoSection, EquipoSection, Footer, Soluciones, SpanGradient, TecnologiasSection, TestimonioSection, TextReveal } from '@/components'
 import Image from 'next/image'
-
-if (typeof window !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger, useGSAP)
-}
 
 
 export default function Home(){
     const [ activeNumber, setActiveNumber ] = useState(1)
-    const sectionHero = useRef(null)
-    const section2 = useRef(null)
-    const contentSection2 = useRef(null)
+    const sectionHero         = useRef(null)
+    const section2            = useRef(null)
+    const contentSection2     = useRef(null)
     const contentInfoSection2 = useRef(null)
-    const section2b = useRef(null)
-    const section3 = useRef(null)
-    const section3a = useRef(null)
-    const section3b = useRef(null)
-    const section3c = useRef(null)
-    const section3d = useRef(null)
+    const section2b           = useRef(null)
+    const section3            = useRef(null)
+    const section3a           = useRef(null)
+    const section3b           = useRef(null)
+    const section3c           = useRef(null)
+    const section3d           = useRef(null)
+    const titleSection3       = useRef(null)
 
     const contentSection3 = useRef(null)
-    const section4 = useRef(null)
-    
+    const section4        = useRef(null)
 
     gsap.registerPlugin(ScrollTrigger)
+
+    useEffect(() => {
+        const lenis = new Lenis()
+        lenis.on('scroll', ScrollTrigger.update)    
+        gsap.ticker.add(time => {
+            lenis.raf(time * 1000)
+        }) 
+        gsap.ticker.lagSmoothing(0)
+    })
 
     useGSAP(() => {
         const sectionHeroCurrent = sectionHero.current
@@ -192,7 +198,7 @@ export default function Home(){
                     scrub: true,
                     onEnter: () => setActiveNumber(index + 1),
                     onEnterBack: () => setActiveNumber(index + 1),
-                    markers: true,
+                    // markers: true,
                 },
                 
             )
@@ -240,6 +246,29 @@ export default function Home(){
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     })
+
+    useGSAP(() => {
+        const secttion3Current = section3.current
+        const titleSection3Current = titleSection3.current
+        const section4Current = section4.current
+
+        gsap.to(titleSection3Current, {
+            scrollTrigger: {
+                trigger: secttion3Current,
+                start: "top top",
+                endTrigger: section4Current,
+                end: "end end",
+                scrub: true,
+                markers: true,
+            },
+            display: 'flex',
+            ease: "power1.inOut",
+            // x: '100%',
+
+            
+
+        })
+    })
     
     
     return (
@@ -275,7 +304,9 @@ export default function Home(){
                                         // ref={heroTitle2} 
                                         style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)'}} 
                                     >
-                                        Tu Negocio
+                                        <SpanGradient>
+                                            Tu Negocio
+                                        </SpanGradient>
                                     </span>
 
                                 </div>
@@ -311,7 +342,7 @@ export default function Home(){
                 >
                     <div 
                         ref={contentSection2}
-                        className='absolute flex flex-col justify-center items-center w-[400px] h-[400px] bg-black rounded-2xl overflow-hidden'
+                        className='absolute flex flex-col justify-start items-start w-[400px] h-[400px] bg-[#0E1629] rounded-2xl overflow-hidden p-[5%]'
                         
                     >
                         {/* <div className='text-black'>
@@ -326,36 +357,54 @@ export default function Home(){
                                 ref={contentInfoSection2}
                                 className="flex flex-col justify-start items-start gap-8 opacity-0"
                             >
-                                <h2 className="text-[30px] md:text-[60px] lg:text-[90px] text-white leading-none font-semibold mt-16">
-                                    Programa {' '}
+                                <h2 className="text-[30px] md:text-[55px] lg:text-[80px] text-white leading-none font-semibold mt-16">
+                                    Somos tu {' '}
                                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
-                                        despegue
+                                        socio
                                     </span><br />
                                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
-                                        empresarial
+                                        digital {' '}
+                                    </span> 
+                                    <br />
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
+                                        estratégico
                                     </span> 
                                 </h2>
+                                <p className="text-xl w-[40%] text-balance">
+                                    Al elegirnos como tu Socio Digital Estratégico para impulsar tu 
+                                    negocio, el coste del desarrollo de tu nueva página web o 
+                                    ecommerce lo asumimos nosotros.
+                                </p>
                                 <p className="text-xl">
-                                    Texto provisional. Contenido de esta descripción: resumen de todo el programa + oferta<br /> 
-                                    irresistible. ¿Sientes que tu negocio está estancado y no logras los resultados que esperabas?<br/>
-                                    ¿Tienes una idea de negocio pero no sabes por dónde empezar? Muchos emprendedores y<br/>
-                                    empresarios enfrentan estas frustraciones: la falta de crecimiento, la incertidumbre y el miedo al
+
                                 </p>
-                                <p className="font-semibold">
-                                    + de 100 empresas despegadas
+                                <p className="text-xl">
+
                                 </p>
-                                <p className="font-semibold">
-                                    + de 150 campañas de SEO exitosas
-                                </p>
-                                <p className="font-semibold">
-                                    + de 150% de visibilidad online
-                                </p>
-                                <p className="font-semibold">
-                                    + de 95% de sastifacción de clientes
-                                </p>
-                                {/* <ButtonCto>
+                               
+                                <ButtonCto>
                                     Saber más
-                                </ButtonCto> */}
+                                </ButtonCto>
+                                <div className='absolute top-24 right-24 flex flex-col gap-4 items-start justify-start '>
+                                    <div className='flex justify-start items-center gap-1 bg-[#FFFFFF30] py-[8px] px-[16px] rounded-full w-full'>
+                                        <span className='bg-[#0E1629] flex justify-center items-center rounded-full p-2 w-[40px] h-[40px]'>
+                                            <img src="/flecha.svg" alt="logo" />
+                                        </span>
+                                        95% de sastifacción cliente
+                                    </div>
+                                    <div className='flex justify-start items-center gap-1 bg-[#FFFFFF30] py-[8px] px-[16px] rounded-full w-full'>
+                                        <span className='bg-[#0E1629] flex justify-center items-center rounded-full p-2 w-[40px] h-[40px]'>
+                                            <img src="/flecha.svg" alt="logo" />
+                                        </span>
+                                        Ayudamos a más de 100 empresas
+                                    </div>
+                                    <div className='flex justify-start items-center gap-1 bg-[#FFFFFF30] py-[8px] px-[16px] rounded-full w-full'>
+                                        <span className='bg-[#0E1629] flex justify-center items-center rounded-full p-2 w-[40px] h-[40px]'>
+                                            <img src="/flecha.svg" alt="logo" />
+                                        </span>
+                                        Metodología con garantía
+                                    </div>
+                                </div>
                             </div>
                             <img 
                                 src="/assets/images/cohete.webp" 
@@ -386,27 +435,46 @@ export default function Home(){
                     className="flex flex-col justify-center items-center w-full h-screen bg-transparent"
                 >
                 </section>    
-
+            
                 <section
-                    className='w-full'
+                    className='relativeflex flex-col w-full'
                 >
-                    <div className="fixed hidden md:flex justify-center items-center  w-full md:w-1/2 h-full z-10">
-                        <h2 className="text-balance text-5xl text-black">Estrategia, acción y resultados</h2>
+                    <div className="fixed top-0 md:flex justify-start items-center  w-[40%] h-full p-[5%]">
+                        <h2
+                            ref={titleSection3}
+                            className="hidden text-balance text-[80px] font-bold leading-none text-black w-full"
+                        >
+                            Estrategia,<br/>
+                            acción, <br/>
+                            {/* <SpanGradient> */}
+                                resultados
+                            {/* </SpanGradient> */}
+                        </h2>
                     </div>
-                    <div ref={section3} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
-                        <div className="flex justify-center items-center w-full h-full">
-                            <div className='w-1/2 h-full'>
+
+                    <div // section
+                        ref={section3} 
+                        className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10"
+                    >
+                        <div 
+                            className="flex justify-center items-center w-full h-full"
+                        >
+                            <div 
+                                className='w-1/2 h-full'
+                            >
                                 {/* <h2 className="text-5xl text-black">Primera sección</h2> */}
 
                             </div>
-                            <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
-                            <Image
-                                src="/assets/images/image1.webp"
-                                fill
-                                alt="Imagen sección 1"
-                                style={{ objectFit: 'cover' }}
-                                loading="lazy"
-                            />
+                            <div 
+                                className="relative flex justify-center items-center w-1/2 h-full overflow-hidden"
+                            >
+                                <Image
+                                    src="/assets/images/image1.webp"
+                                    fill
+                                    alt="Imagen sección 1"
+                                    style={{ objectFit: 'cover' }}
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
                     </div>
@@ -418,13 +486,13 @@ export default function Home(){
 
                             </div>
                             <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
-                            <Image
-                                src="/assets/images/image2.webp"
-                                fill
-                                alt="Imagen sección 2"
-                                style={{ objectFit: 'cover' }}
-                                loading="lazy"
-                            />
+                                <Image
+                                    src="/assets/images/image2.webp"
+                                    fill
+                                    alt="Imagen sección 2"
+                                    style={{ objectFit: 'cover' }}
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
                     </div>
@@ -432,17 +500,17 @@ export default function Home(){
                     <div ref={section3b} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className='w-1/2 h-full'>
-                            <h2 className="text-5xl">Tercera sección</h2>
+                                {/* <h2 className="text-5xl">Tercera sección</h2> */}
 
                             </div>
                             <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
-                            <Image
-                                src="/assets/images/image3.webp"
-                                fill
-                                alt="Imagen sección 3"
-                                style={{ objectFit: 'cover' }}
-                                loading="lazy"
-                            />
+                                <Image
+                                    src="/assets/images/image3.webp"
+                                    fill
+                                    alt="Imagen sección 3"
+                                    style={{ objectFit: 'cover' }}
+                                    loading="lazy"
+                                />
                             </div>
                         </div>
                     </div>

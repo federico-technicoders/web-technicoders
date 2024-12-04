@@ -32,7 +32,7 @@ export const CajaCuadrada = () => {
             end: "top top",
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
         })
 
         // Mantiene la sección 2 fija hasta la sección 4
@@ -43,7 +43,7 @@ export const CajaCuadrada = () => {
             end: "top top",
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
         })
 
         // Anima el escalado de contentSection2 para agrandarse y luego achicarse
@@ -53,7 +53,7 @@ export const CajaCuadrada = () => {
                 start: "top bottom",
                 end: "bottom top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
         })
         .to(contentSection2Current, {
@@ -81,7 +81,7 @@ export const CajaCuadrada = () => {
                 trigger: section2bCurrent,
                 start: "top top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
             opacity: 0,
         })
@@ -92,7 +92,7 @@ export const CajaCuadrada = () => {
                 trigger: section2bCurrent,
                 start: "top top",
                 scrub: true,
-                markers: true,
+                // markers: true,
             },
             opacity: 1,
         })
@@ -105,7 +105,7 @@ export const CajaCuadrada = () => {
             end: "top top",
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
         })
     })
 
