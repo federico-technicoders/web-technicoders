@@ -160,7 +160,7 @@ export default function Home(){
                 end: "top top",
                 scrub: true,
                 // markers: true,
-            }
+            },
         })
         .to(section4Current, {
             display: 'flex'
@@ -560,7 +560,7 @@ export default function Home(){
                         </div>
                     </div>
 
-                    <div ref={section3c} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                    <div ref={section3c} className="relative flex items-center justify-center w-full h-[200vh] bg-gray-100 -z-10">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className='w-1/2 h-full'>
                             </div>
@@ -580,25 +580,25 @@ export default function Home(){
                         </div>
                     </div>
 
-                    {/* <div ref={section3d} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                    <div ref={section3d} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className='w-1/2 h-full'>
                             </div>
                             <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
-                            <Image
+                            {/* <Image
                                 src="/assets/images/image5.webp"
                                 fill
                                 alt="Imagen sección 5"
                                 style={{ objectFit: 'cover' }}
                                 loading="lazy"
-                            />
+                            /> */}
                              <div className='absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-full p-[5%] mt-[30%]'>
                                 <h3 className='text-[32px] font-semibold'></h3>
                                 <p></p>
                             </div>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </section>
 
                 <section 
