@@ -407,13 +407,14 @@ export default function Home(){
                                 </div>
                             </div>
                             <img 
-                                src="/assets/images/cohete.webp" 
-                                alt="logo" 
+                                src="assets/images/cohete.webp" 
+                                alt="choete" 
                                 className="absolute -right-10 -bottom-24 z-100" 
-                                data-scroll 
-                                data-scroll-speed='.2' 
-                                loading="lazy"
+                                // data-scroll 
+                                // data-scroll-speed='.2' 
+                                // loading="lazy"
                             />
+                            {/* <Image src={'/assets/images/cohete.webp'} alt="choete" className="absolute -right-10 -bottom-24 z-100" fill /> */}
                         </div>
                     {/* </div> */}
 
