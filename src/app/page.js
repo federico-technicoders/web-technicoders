@@ -135,19 +135,20 @@ export default function Home(){
             },
             opacity: 1,
         })
+        
         gsap.timeline({
             scrollTrigger: {
                 trigger: section4Current,
                 start: "top bottom",
                 end: "top top",
                 scrub: true,
-                // markers: true,
+                markers: true,
             },
         })
-
         .to(contentSection3Current, {
             width: '100vw',
             height: '100vh',
+            opacity: 0,
             borderRadius: '0px',
             ease: "power1.inOut",
         })
@@ -161,11 +162,9 @@ export default function Home(){
                 // markers: true,
             },
         })
-
         .to(section4Current, {
             display: 'flex'
         })
-
         .to(contentSection3Current, {
             opacity: 0,
         })         
@@ -299,7 +298,7 @@ export default function Home(){
           gsap.to(titleSection3Current, {
             scrollTrigger: {
               trigger: section4Current,
-              start: "top top+=10%",             
+              start: "top 80%",             
               scrub: true,
               toggleActions: "play reverse play reverse",
             //   markers: true,
@@ -507,6 +506,12 @@ export default function Home(){
                                     style={{ objectFit: 'cover' }}
                                     loading="lazy"
                                 />
+                                <div className='absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-[80%] p-[5%] mt-[30%]'>
+                                    <h3 className='text-[32px] font-semibold text-balance'>
+                                        <SpanGradient>Tu equipo de marketing digital</SpanGradient> a tiempo completo
+                                    </h3>
+                                    <p>Como tu partner digital estratégico, somos tu equipo de marketing completo, sin necesidad de contratar más personal. Nos encargamos de cada paso: desde la estrategia y planificación de campañas, hasta la gestión de redes sociales y la optimización web. Accede a un equipo de expertos dedicados que colaboran para impulsar tu marca, optimizar resultados y alcanzar tus objetivos de manera eficiente.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -525,6 +530,10 @@ export default function Home(){
                                     style={{ objectFit: 'cover' }}
                                     loading="lazy"
                                 />
+                                 <div className='absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-[80%] p-[5%] mt-[30%]'>
+                                    <h3 className='text-[32px] font-semibold'>Transformamos datos en <SpanGradient>decisiones estratégicas</SpanGradient></h3>
+                                    <p>Transformamos datos en acciones concretas. Nuestro enfoque analítico te ofrece informes claros y análisis en tiempo real que orientan cada estrategia. Con una visión 360° de tu presencia digital, podrás tomar decisiones informadas que impulsan tu negocio y maximizan tu retorno de inversión.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -543,6 +552,10 @@ export default function Home(){
                                     style={{ objectFit: 'cover' }}
                                     loading="lazy"
                                 />
+                                 <div className='absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-[80%] p-[5%] mt-[30%]'>
+                                    <h3 className='text-[32px] font-semibold'>Un <SpanGradient>enfoque holístico</SpanGradient> para tu éxito digital</h3>
+                                    <p>Como tu socio digital estratégico, creamos una estrategia completa que integra cada aspecto de tu marketing digital. Desde SEO y publicidad paga hasta contenido y redes sociales, todas las acciones están alineadas para lograr resultados sólidos y coherentes. Juntos, diseñamos una experiencia de marca que conecta profundamente con tu audiencia.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -559,11 +572,15 @@ export default function Home(){
                                 style={{ objectFit: 'cover' }}
                                 loading="lazy"
                             />
+                             <div className='absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-[80%] p-[5%] mt-[30%]'>
+                                    <h3 className='text-[32px] font-semibold'><SpanGradient>Acompañamiento continuo</SpanGradient> para un crecimiento sostenible</h3>
+                                    <p>No estamos aquí solo para una campaña; somos tu partner estratégico a largo plazo. Te acompañamos de forma continua, adaptando nuestras tácticas a medida que tu negocio y el mercado evolucionan. Así, aseguramos que cada inversión en marketing impulse un crecimiento sostenible y duradero.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div ref={section3d} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
+                    {/* <div ref={section3d} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className='w-1/2 h-full'>
                             </div>
@@ -575,14 +592,18 @@ export default function Home(){
                                 style={{ objectFit: 'cover' }}
                                 loading="lazy"
                             />
+                             <div className='absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%] w-full p-[5%] mt-[30%]'>
+                                <h3 className='text-[32px] font-semibold'></h3>
+                                <p></p>
+                            </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </section>
 
                 <section 
                     // mirar la diferencia entre hidden y none, que hace que no funcinoes
-                    className="flex flex-col justify-center items-center w-full h-screen bg-black"
+                    className="flex flex-col justify-center items-center w-full h-screen bg-gray-100"
                     >
                     <div 
                         ref={section4} 

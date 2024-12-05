@@ -80,7 +80,7 @@ export const CajaCuadrada = () => {
 				trigger: section3Current,
 				start: "top top",
 				scrub: true,
-				markers: true,
+				// markers: true,
 			},
 			opacity: 0
 		})
@@ -91,7 +91,7 @@ export const CajaCuadrada = () => {
 				trigger: section3Current,
 				start: "top top",
 				scrub: true,
-				markers: true,
+				// markers: true,
 			},
 			opacity: 1
 		})

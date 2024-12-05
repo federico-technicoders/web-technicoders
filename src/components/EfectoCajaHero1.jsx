@@ -140,7 +140,7 @@ export const CajaCuadrada1 = () => {
             end: "top top",
             pin: true,
             pinSpacing: false,
-            markers: true,
+            // markers: true,
             onEnter: () => setActiveNumber("01"),
             onEnterBack: () => setActiveNumber("01"),
         })

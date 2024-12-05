@@ -28,7 +28,7 @@ export const TextReveal = () => {
                     // end: "bottom 85%",
                     start: "top bottom",
                     end: "bottom center",
-                    markers: true,
+                    // markers: true,
                 },
                 color: "#2A2A2A",
                 duration: 5,
