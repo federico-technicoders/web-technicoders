@@ -160,7 +160,7 @@ export default function Home(){
                 end: "top top",
                 scrub: true,
                 // markers: true,
-            },
+            }
         })
         .to(section4Current, {
             display: 'flex'
