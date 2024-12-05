@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export const TestimonioSection = () => {
     return (
-        <section  className="relative flex justify-start items-start w-full min-h-screen text-white -z-0">
+        <section  className="relative flex justify-start items-start w-full  text-white -z-0">
             <div className="abolute top-0 left-0 flex flex-col items-center justify-start w-full h-full px-[5%] py-[10%] text-white text-center bg-[#0E1629]">
                 <TitleSection><SpanGradient>Qué dicen</SpanGradient> de nosotros?</TitleSection>  
                 <Swiper

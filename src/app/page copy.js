@@ -248,70 +248,26 @@ export default function Home(){
     })
 
     useGSAP(() => {
-        const section3Current = section3.current
+        const secttion3Current = section3.current
         const titleSection3Current = titleSection3.current
         const section4Current = section4.current
 
-        // gsap.to(titleSection3Current, {
-        //     scrollTrigger: {
-        //         trigger: section3Current,
-        //         start: "top top+=75%",
-        //         scrub: true,
-        //         toggleActions: "play pause resume reset",
-        //         markers: true,
-        //     },
-        //     // display: 'flex',
-        //     opacity: 1,
-        //     ease: "power1.inOut",
-        //     // x: '100%',
-        // })
-        // gsap.to(titleSection3Current, {
-        //     scrollTrigger: {
-        //         trigger: section4Current,
-        //         start: "top top+=40%",                
-        //         scrub: true,
-        //         toggleActions: "play pause resume reset",
-        //         markers: true,
-        //     },
-        //     // display: 'flex',
-        //     opacity: 0,
-        //     ease: "power1.in",
-        //     // x: '100%',
-        // })
-
-        gsap.fromTo(titleSection3Current, 
-            { opacity: 0 }, // Estado inicial
-            {
-              scrollTrigger: {
-                trigger: section3Current,
-                start: "top 25%",
-                end: "500% bottom",
-                scrub: true,
-                toggleActions: "play reverse play reverse",
-                // markers: true,
-              },
-              opacity: 1,
-              ease: "power1.inOut",
-            }
-          )
-        
-          // Animación para la desaparición del título al llegar a la sección 4
-          gsap.to(titleSection3Current, {
+        gsap.to(titleSection3Current, {
             scrollTrigger: {
-              trigger: section4Current,
-              start: "top top+=10%",             
-              scrub: true,
-              toggleActions: "play reverse play reverse",
-            //   markers: true,
+                trigger: secttion3Current,
+                start: "top top",
+                endTrigger: section4Current,
+                end: "end end",
+                scrub: true,
+                markers: true,
             },
-            opacity: 0,
+            display: 'flex',
             ease: "power1.inOut",
-          });
- 
-  
-        
-        
+            // x: '100%',
 
+            
+
+        })
     })
     
     
@@ -322,6 +278,11 @@ export default function Home(){
                     ref={sectionHero}
                     className="flex flex-col justify-center items-center w-full h-screen bg-black"
                 >
+                    {/* <h1 className="text-5xl font-bold">Sección Hero</h1>
+                    <p className="text-xl">Este es el título de la sección</p>
+                    <div className="flex justify-center items-center">
+                        <span className='text-8xl font-bold'>+</span>
+                    </div> */}
                     <div className="relative flex flex-col justify-center items-center w-full h-screen px-[5%] pt-[10%] ">                    
                         <div 
                             
@@ -384,6 +345,14 @@ export default function Home(){
                         className='absolute flex flex-col justify-start items-start w-[400px] h-[400px] bg-[#0E1629] rounded-2xl overflow-hidden p-[5%]'
                         
                     >
+                        {/* <div className='text-black'>
+                            <h2 className="text-5xl font-bold">Sección 2</h2>
+                            <p className="text-xl">Este es el título de la sección</p>
+                        </div> */}
+                        {/* <div 
+                            // ref={choeteSectionRef} 
+                            className="relative px-[5%] py-[10%] w-full h-full  bg-[#0E1629]"
+                        > */}
                             <div
                                 ref={contentInfoSection2}
                                 className="flex flex-col justify-start items-start gap-8 opacity-0"
@@ -474,13 +443,13 @@ export default function Home(){
                     <div className="fixed top-0 md:flex justify-start items-center  w-[40%] h-full p-[5%]">
                         <h2
                             ref={titleSection3}
-                            className="flex flex-col text-balance text-[80px] font-bold leading-none text-black w-full opacity-1"
+                            className="hidden text-balance text-[80px] font-bold leading-none text-black w-full"
                         >
                             Estrategia,<br/>
                             acción, <br/>
-                            <SpanGradient>
+                            {/* <SpanGradient> */}
                                 resultados
-                            </SpanGradient>
+                            {/* </SpanGradient> */}
                         </h2>
                     </div>
 
@@ -550,6 +519,8 @@ export default function Home(){
                     <div ref={section3c} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className='w-1/2 h-full'>
+                                {/* <h2 className="text-5xl">Cuarta sección</h2> */}
+
                             </div>
                             <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
                             <Image
@@ -566,6 +537,8 @@ export default function Home(){
                     <div ref={section3d} className="relative flex items-center justify-center w-full h-screen bg-gray-100 -z-10">
                         <div className="flex justify-center items-center w-full h-full">
                             <div className='w-1/2 h-full'>
+                            {/* <h2 className="text-5xl">Quinta sección</h2> */}
+
                             </div>
                             <div className="relative flex justify-center items-center w-1/2 h-full overflow-hidden">
                             <Image
@@ -628,11 +601,80 @@ export default function Home(){
                 <TextReveal />
                 <section                  
                     className="flex flex-col justify-center items-center w-full  bg-transparent"
-                >                    
+                >
+                    {/* <div 
+                        className='flex flex-col justify-center items-center w-full h-full bg-black'
+                    >
+                        <h2 className="text-5xl text-white font-bold mb-10">
+                            Sección Equipo
+                        </h2>
+                        <div className='flex gap-1 justify-around items-center w-full'>
+                            <div className='w-[23%] h-[500px] bg-white rounded-xl'></div>
+                            <div className='w-[23%] h-[500px] bg-white rounded-xl'></div>
+                            <div className='w-[23%] h-[500px] bg-white rounded-xl'></div>
+                            <div className='w-[23%] h-[500px] bg-white rounded-xl'></div>
+                        </div>
+                    </div> */}
                     <EquipoSection />
-                </section>                
-                <TecnologiasSection />                
-                <TestimonioSection />               
+                </section>
+                {/* <section                  
+                    className="flex flex-col justify-center items-center w-full h-screen bg-transparent"
+                >
+
+                    <div 
+                        className='flex justify-center items-center w-full h-full bg-black'
+                    >
+                        <h2 className="text-5xl text-white font-bold">
+
+                            Sección Tecnología
+                        </h2>
+                    </div>
+                </section> */}
+                <TecnologiasSection />
+                {/* <section                  
+                    className="flex flex-col justify-center items-center w-full bg-transparent"
+                > */}
+                    {/* <div 
+                        className='flex flex-col justify-center items-center w-full h-full bg-black'
+                    >
+                        <h2 className="text-5xl text-white font-bold">
+
+                            Que dicen de nosotros
+                        </h2>
+                        <div className='flex justify-start items-start w-full h-screen'>
+                            <div className='flex justify-end items-center w-[60%] h-full  rounded-xl p-2'>
+                                <div className='flex justify-center items-center w-[60%] h-[60%] bg-slate-400 rounded-xl'>
+                                    <div className='flex justify-center items-center rounded-full bg-[#FFFFFF40] w-12 h-12'>
+                                        ▶️
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='flex justify-start items-center w-[40%] h-full  rounded-xl p-2'>
+                                <div className='flex justify-center items-center w-[60%] h-[60%] bg-white rounded-xl'>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div> */}
+                    <TestimonioSection />
+                {/* </section> */}
+                {/* <section                  
+                    className="flex flex-col justify-center items-center w-full min-h-screen bg-transparent"
+                >
+                    <div 
+                        className='flex flex-col justify-center items-center w-full h-full bg-black'
+                    >
+                        <h2 className="text-5xl text-white font-bold mb-10">
+
+                            Sección Contacto
+                        </h2>
+                        <div className='w-[70%] h-[800px] bg-[#ffffff20] rounded-xl mb-24'>
+
+                        </div>
+                    </div>
+                </section> */}
                 <ContactoSection />
             </main>
             <Footer />
