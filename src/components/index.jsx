@@ -1,3 +1,7 @@
+export { Section } from "./Section"
+
+export { SectionHero } from "./SectionHero"
+
 export { ButtonCto } from "./ui/ButtonCto/ButtonCto"
 
 export { EquipoSection } from "./EquipoSection/EquipoSection"
@@ -17,7 +21,6 @@ export { Soluciones } from "./Soluciones"
 export { TecnologiasSection } from "./Tecnologias/TecnologiasSection"
 export { TextParallax } from "./TextParallax/TextParallax"
 export { TextReveal } from "./TextReveal"
-
 
 
 

@@ -8,7 +8,6 @@ import Lenis from '@studio-freight/lenis'
 import { ButtonCto, ContactoSection, EquipoSection, Footer, Soluciones, SpanGradient, TecnologiasSection, TestimonioSection, TextReveal } from '@/components'
 import Image from 'next/image'
 
-
 export default function Home(){
     const [ activeNumber, setActiveNumber ] = useState(1)
     const sectionHero         = useRef(null)
