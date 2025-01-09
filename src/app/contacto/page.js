@@ -13,7 +13,7 @@ const Contacto = () => {
                 <SectionHero>
                     <div className="flex flex-col justify-center  lg:justify-start lg:items-start gap-8 w-full min-h-screen px-[5%] pt-[15%] pb-[10%] bg-[#0E1629]">
                         <h1 className="text-5xl lg:text-8xl font-semibold text-balance">
-                            Tu próximo<br/> gran proyecto<br/> empieza con un<br/> '<span className="text-[#06D5B9]">Hola</span>'
+                            Tu próximo<br/> gran proyecto<br/> empieza con un<br/> &#39;<span className="text-[#06D5B9]">Hola</span>&#39;
                         </h1>
                         <ButtonCto>
                             Cuéntanos tu idea →
