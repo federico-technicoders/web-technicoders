@@ -24,7 +24,7 @@ const Contacto = () => {
                     <BlurredCircle
                         width={100}
                         height={150}
-                        position={{ top: -135, left: 0 }}
+                        position={{ top: -125, left: 0 }}
                         // gradient={['blue-400', 'purple-600']}
                         // opacity={30}
                         // blur="3xl"
