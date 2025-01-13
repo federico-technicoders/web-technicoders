@@ -1,6 +1,13 @@
-import { ButtonCto, Footer, Section, SectionHero, SpanGradient, TitleSection } from "@/components"
-import { BlurredCircle } from "@/components/ui/BlurredCircle"
-
+import { 
+    BlurredCircle, 
+    ButtonCto, 
+    Footer, 
+    Main, 
+    Section, 
+    SectionHero, 
+    SpanGradient, 
+    TitleSection 
+} from "@/components"
 
 export const metadata = {  
     title: "Contacto",
@@ -10,7 +17,7 @@ export const metadata = {
 const Contacto = () => {
     return (
         <>
-            <main className="min-h-screen bg-white">
+            <Main>
                 <SectionHero>
                     <div className="relative flex flex-col justify-center  lg:justify-start lg:items-start gap-8 w-full min-h-screen px-[5%] pt-[15%] pb-[10%] bg-[#0E1629]">
                         <h1 className="text-5xl lg:text-8xl font-semibold text-balance">
@@ -100,10 +107,9 @@ const Contacto = () => {
                         </div>
                     </div>
                 </Section>             
-            </main>
-            <Footer />
-        </>
-    )
-}
+            </Main>
+        <Footer />
+    </>
+)}
 
 export default Contacto
