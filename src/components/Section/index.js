@@ -1,7 +1,7 @@
 
 export const Section = ({children}) => {
     return (
-        <section className="w-full min-h-screen text-white">
+        <section className="flex flex-col items-start justify-start w-full text-white">
             {children}
         </section>
     )
