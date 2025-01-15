@@ -5,7 +5,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import Lenis from '@studio-freight/lenis'
-import { ButtonCto, ContactoSection, EquipoSection, Footer, Soluciones, SpanGradient, TecnologiasSection, TestimonioSection, TextReveal } from '@/components'
+import { ButtonCto, ContactoSection, EquipoSection, Footer, Soluciones, SpanGradient, TecnologiasSection, TestimonioSection, TextReveal, TitleSection } from '@/components'
 import Image from 'next/image'
 
 export default function Home(){
@@ -653,9 +653,17 @@ export default function Home(){
                 </section>                
                 <TecnologiasSection />                
                 <TestimonioSection />               
-                <ContactoSection />
+                <ContactoSection >
+                    <TitleSection
+                        size='104px'
+                        bold='font-semibold'
+                    >
+                        <SpanGradient>¡Cuéntanos</SpanGradient><br/>
+                        tus ideas!
+                    </TitleSection>
+                </ContactoSection>
             </main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }

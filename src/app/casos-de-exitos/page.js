@@ -1,5 +1,5 @@
 'use client'
-import { ButtonCto, Main, Section, SectionHero } from "@/components";
+import { ButtonCto, ContactoSection, Main, Section, SectionHero, SpanGradient, TitleSection } from "@/components";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -12,7 +12,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "ecommerce",
         sector: "tiendas online",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 2,
@@ -20,7 +21,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "marketplace",
         sector: "tiendas online",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "academia online",
         sector: "educación",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 4,
@@ -36,7 +39,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "sitio Web",
         sector: "corporativo",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 5,
@@ -44,7 +48,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "portfolio",
         sector: "personal",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 6,
@@ -52,7 +57,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "blog",
         sector: "corporativo",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 12,
@@ -60,7 +66,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "ecommerce",
         sector: "tiendas online",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 7,
@@ -68,7 +75,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "marketplace",
         sector: "tiendas online",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 8,
@@ -76,7 +84,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "academia online",
         sector: "educación",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 9,
@@ -84,7 +93,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "sitio Web",
         sector: "corporativo",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 10,
@@ -92,7 +102,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "portfolio",
         sector: "personal",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     },
     {
         id: 11,
@@ -100,7 +111,8 @@ const proyectos = [
         image: "/assets/images/casos-de-exito/oliva.webp",
         category: "blog",
         sector: "corporativo",
-        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios."
+        description: "Rediseño web con un estilo tecnológico, creando una experiencia digital atractiva y conctada con los usuarios.",
+        icon: "/assets/images/iconos-empresas/oliva-logo.svg"
     }
 ]
 
@@ -205,9 +217,10 @@ export default function SuccesStories() {
                                     <div  className="relative flex flex-col items-start justify-start gap-4 rounded-2xl">
                                             <img src={proyecto.image} alt={proyecto.name} className="w- h-full rounded-2xl" />
                                             <div className="absolute flex flex-col items-center justify-end w-full h-full gap-4">                                            
-                                                <h3 className="text-2xl font-semibold text-balance pb-8">
+                                                {/* <h3 className="text-2xl font-semibold text-balance pb-8">
                                                     {proyecto.name}
-                                                </h3>                                        
+                                                </h3>                                  */}
+                                                <img src={proyecto.icon} alt={proyecto.name} className="w-[200px]" />
                                             </div>
 
                                     </div>
@@ -237,11 +250,17 @@ export default function SuccesStories() {
                             ))
                         }
                     </div>
-                </div>
-
-
-                
+                </div>                
             </Section>
+            <ContactoSection>
+                <TitleSection
+                    size='80px'
+                    bold='font-semibold'
+                >
+                    <SpanGradient>Transformamos ideas<br/>en resultado</SpanGradient>
+                    
+                </TitleSection>
+            </ContactoSection>
         </Main>
     )
 }
