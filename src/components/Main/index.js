@@ -2,7 +2,7 @@
 
 export const Main = ({children}) => {
     return (
-        <main className="min-h-screen bg-white -z-0">
+        <main className="bg-white -z-20">
             {children}
         </main>
     )
