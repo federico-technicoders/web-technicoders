@@ -246,7 +246,7 @@ const Contacto = () => {
                     </div>
                 </Section>              */}
             </Main>
-        {/* <Footer /> */}
+      
             <section 
                 ref={sectionFormRef}
                 className="absolute top-0 left-0 flex flex-col items-center justify-center w-full min-h-screen bg-[#FFFFFF20] z-10"
