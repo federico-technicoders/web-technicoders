@@ -29,6 +29,7 @@ export const Footer = () => {
             ease: 'power2.out',
         })
         // gsap
+        ScrollTrigger.refresh()
     })
     
     return (

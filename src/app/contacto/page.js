@@ -1,26 +1,13 @@
 'use client'
-import { useRef } from "react"
+import { useRef} from "react"
+// import Image from "next/image"
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-import { 
-    BlurredCircle, 
-    ButtonCto, 
-    Main, 
-    Section, 
-    SectionHero, 
-    SpanGradient, 
-    TitleSection 
-} from "@/components"
-
-// export const metadata = {  
-//     title: "Contacto",
-//     description: "Contacto"
-// }
+import { BlurredCircle } from "@/components"
 
 
-const Contacto = () => {
+export default function Contacto() {
     const sectionFormRef = useRef(null)
     const formRef = useRef(null)
     const divSectionRef = useRef(null)
@@ -73,7 +60,6 @@ const Contacto = () => {
         // para cambio de rutas evento de limpieza
         // ScrollTrigger.getAll().forEach(trigger => trigger.kill())
         ScrollTrigger.refresh() 
-        
     })
 
     const handleShowForm = () => {
@@ -137,119 +123,50 @@ const Contacto = () => {
 
        
     }
+
     return (
-        <div
-            ref={divSectionRef}
-            className="relative w-full min-h-screen"
-        >
-            <Main>
-                <SectionHero
-                    
+        <>
+            <div 
+                 ref={divSectionRef}
+                className="relative w-full min-h-screen bg-black"
+            >
+                <main
+                   
                 >
-                    <div className="relative flex flex-col justify-center  lg:justify-start lg:items-start gap-8 w-full min-h-screen px-[5%] pt-[15%] pb-[10%] bg-[#0E1629]">
-                        <h1 className="text-5xl lg:text-8xl font-semibold text-balance">
-                            Tu próximo<br/> gran proyecto<br/> empieza con un<br/> &#39;<span className="text-[#06D5B9]">Hola</span>&#39;
-                        </h1>
-                        {/* <ButtonCto
-                            // onClick={handleShowForm}
-                            onClick={() => console.log('abrir modal')}
-                        >
-                            Cuéntanos tu idea →
-                        </ButtonCto> */}
-                        <button 
-                            className="px-[20px] py-[10px] border-[2px] border-teal-400 rounded-full"    
-                            onClick={handleShowForm}        
-                        >
-                            <span className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-400">
-                                Cuéntanos tu idea →
-                            </span>
-                        </button>
-                    </div>
-                    {/* <BlurredCircle /> */}
-                    <BlurredCircle
-                        width={100}
-                        height={150}
-                        position={{ top: -125, left: 0 }}
-                        // gradient={['blue-400', 'purple-600']}
-                        // opacity={30}
-                        // blur="3xl"
-                    />
-                </SectionHero> 
-                {/* <Section>
-                    <div className="flex flex-col items-center justify-start w-full bg-white text-black py-[10%] px-[5%]">
-                        <div className="flex flex-col gap-16 w-[70%]">
-                            <TitleSection
-                                size='80px'
-                                bold='font-semibold'
+                    {/* <section className="flex flex-col items-center justify-center w-full h-screen">
+                        <h1>Contacto hero</h1>
+                        <button onClick={handleShowForm}>Empezar con el formulario</button>
+                    </section> */}
+
+                    <section className="flex flex-col items-center justify-center w-full ">
+                        <div className="relative flex flex-col justify-center  lg:justify-start lg:items-start gap-8 w-full min-h-screen px-[5%] pt-[15%] pb-[10%] bg-[#0E1629]">
+                            <h1 className="text-5xl lg:text-8xl font-semibold text-balance">
+                                Tu próximo<br/> gran proyecto<br/> empieza con un<br/> &#39;<span className="text-[#06D5B9]">Hola</span>&#39;
+                            </h1>
+                            <button 
+                                className="px-[20px] py-[10px] border-[2px] border-teal-400 rounded-full"    
+                                onClick={handleShowForm}        
                             >
-                                <SpanGradient>¡Cuéntanos</SpanGradient> tus ideas!
-                            </TitleSection>
-                            
-                            <form className="flex flex-col gap-12 w-full">
-                                <input 
-                                    type="text" 
-                                    className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000]"
-                                    placeholder="Nombre"
-                                />
-
-                                <input 
-                                    type="email" 
-                                    className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000] mt-4"
-                                    placeholder="E-mail"
-                                />
-
-                                <div className="flex flex-col gap-4">
-                                    <input  
-                                        type="text"                 
-                                        className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000] mt-4"
-                                        placeholder="Teléfono"
-                                    />
-                                    <div className="flex">
-                                        <label className="text-[#00000080]">Contactar por: </label>
-                                        <input type="checkbox" />
-                                    </div>
-                                </div>
-                    
-
-                                <select 
-                                    className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000] mt-4"
-                                >
-                              
-                                    <option value="0">Asunto</option>
-                                    <option value="1">Opción 1</option>
-                                    <option value="2">Opción 2</option>
-                                    <option value="3">Opción 3</option>
-                                    <option value="4">Opción 4</option>
-                                </select>
-                                
-                                <textarea 
-                                    type="text" 
-                                    className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000]"
-                                    placeholder="Escribe tu mensaje"
-                                >
-
-                                </textarea>
-                             
-                                <label className="flex items-center space-x-2">
-                                
-                                    <input 
-                                        type="checkbox" 
-                                        className="w-5 h-5 border-2"
-                                    />
-                                <span className="">He leído y aceptro el <a href="#">Aviso legal</a> y <a href="#">Política de privacidad</a></span>
-                                </label>
-                                <div className=" w-full mt-12">
-                                    <ButtonCto>Enviar</ButtonCto>
-                                </div>
-                            </form>
+                                Cuéntanos tu idea →
+                            </button>
                         </div>
-                    </div>
-                </Section>              */}
-            </Main>
-      
+                        {/* <BlurredCircle /> */}
+                        <BlurredCircle
+                            width={100}
+                            height={150}
+                            position={{ top: -125, left: 0 }}
+                            // gradient={['blue-400', 'purple-600']}
+                            // opacity={30}
+                            // blur="3xl"
+                        />
+                    </section> 
+                    
+                </main>
+                
+            </div>   
             <section 
                 ref={sectionFormRef}
-                className="absolute top-0 left-0 flex flex-col items-center justify-center w-full min-h-screen bg-[#FFFFFF20] z-10"
+                className="absolute top-0 left-0 flex flex-col items-center justify-center w-full min-h-screen bg-[#FFFFFF20]"
             >            
                 <div 
                     ref={formRef}
@@ -334,7 +251,86 @@ const Contacto = () => {
                     </div>
                 </div>
             </section>
-    </div>
-)}
 
-export default Contacto
+            {/* <section
+                ref={sectionFormRef}
+            >
+                <div 
+                     ref={formRef}
+                    className="flex flex-col items-center justify-start w-full bg-white text-black py-[10%] px-[5%]"
+                >
+                    <div className="flex flex-col gap-16 w-[70%]">
+                        <h2
+                            size='80px'
+                            bold='font-semibold'
+                        >
+                            <span>¡Cuéntanos</span> tus ideas!
+                        </h2>
+                        
+                        <form className="flex flex-col gap-12 w-full">
+                            <input 
+                                type="text" 
+                                className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000]"
+                                placeholder="Nombre"
+                            />
+
+                            <input 
+                                type="email" 
+                                className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000] mt-4"
+                                placeholder="E-mail"
+                            />
+
+                            <div className="flex flex-col gap-4">
+                                <input  
+                                    type="text"                 
+                                    className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000] mt-4"
+                                    placeholder="Teléfono"
+                                />
+                                <div className="flex">
+                                    <label className="text-[#00000080]">Contactar por: </label>
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                
+
+                            <select 
+                                className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000] mt-4"
+                            >
+                              
+                                <option value="0">Asunto</option>
+                                <option value="1">Opción 1</option>
+                                <option value="2">Opción 2</option>
+                                <option value="3">Opción 3</option>
+                                <option value="4">Opción 4</option>
+                            </select>
+                            
+                            <textarea 
+                                type="text" 
+                                className="bg-transparent border-b-2 border-[#00000060] focus:outline-none focus:border-blue-500 w-full py-2 placeholder:text-[#000]"
+                                placeholder="Escribe tu mensaje"
+                            >
+
+                            </textarea>
+                           
+                            <label className="flex items-center space-x-2">
+                            
+                                <input 
+                                    type="checkbox" 
+                                    className="w-5 h-5 border-2"
+                                />
+                            <span className="">He leído y aceptro el <a href="#">Aviso legal</a> y <a href="#">Política de privacidad</a></span>
+                            </label>
+                            <div className=" w-full mt-12">
+                                <buttom
+                                    onClick={handleCloseForm}
+                                >
+                                    Enviar
+                                </buttom>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>   */}
+        </>
+    )
+}
