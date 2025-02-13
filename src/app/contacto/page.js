@@ -81,7 +81,7 @@ export default function Contacto() {
 
         gsap.to(formRefCurrent, {
             display: "flex",
-            y: '25%',
+            y: '15%',
             borderRadius: "20px 20px 0 0",
             duration: 0.5,
             zIndex: 1,
@@ -170,7 +170,7 @@ export default function Contacto() {
             >            
                 <div 
                     ref={formRef}
-                    className="flex items-center justify-center w-[95%] h-[200vh] bg-white text-black"
+                    className="flex items-center justify-center w-[98%] h-[200vh] bg-white text-black"
                 >
                     <div 
                         className="absolute top-4 right-4 font-bold text-3xl cursor-pointer"
